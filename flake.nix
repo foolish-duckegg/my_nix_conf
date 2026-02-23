@@ -10,8 +10,13 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # DMS
-    dms.url = "github:AvengeMedia/DankMaterialShell/stable";
+    dms.url = "github:AvengeMedia/DankMaterialShell";
     dms.inputs.nixpkgs.follows = "nixpkgs";
+
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {self, nixpkgs, home-manager, dms, ... }@inputs: {
@@ -30,6 +35,13 @@
          
          # DMS
          dms.nixosModules.default
+         ({ pkgs, ... }: {
+	   nixpkgs.overlays = [
+	     (final: prev: {
+	       dgop = inputs.dgop.packages.${pkgs.system}.default;
+	     })
+	   ];
+	 })
       ];
     };
   };
