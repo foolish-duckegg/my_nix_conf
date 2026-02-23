@@ -19,7 +19,7 @@
     
     # niri config
     xdg.configFile."niri/config.kdl".text = ''
-      include "/etc/nixos/niri-config.kdl"
+      include "/etc/nixos/resources/niri-config.kdl"
 
       // spawn-at-startup "waybar"
 

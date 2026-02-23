@@ -8,6 +8,7 @@
       ./mod/systemconfig.nix
       ./mod/user.nix
       ./mod/packages.nix
+      ./mod/language.nix
     ];
 
   boot.loader.grub.enable = true;
