@@ -29,7 +29,7 @@
       addons = with pkgs; [
         qt6Packages.fcitx5-chinese-addons
         fcitx5-gtk            # GTK 支持
-	rime-data
+        rime-data
         (fcitx5-rime.override {
           rimeDataPkgs = [ rime-ice ];
         })

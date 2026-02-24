@@ -24,4 +24,23 @@
     enable = true;
     wayland.enable = true;
   }; 
+
+  services.dbus.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    # 对于 Niri，gtk 是必须的（处理图标、文件选择和通知）
+    # gnome 换成 gtk 可以保持系统纯净
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-gtk 
+    ];
+  
+    # 配置 Portal 的策略（告诉系统谁来处理特定的请求）
+    config = {
+      common = {
+        default = [ "gtk" ];
+      };
+    };
+  };
+
 }
