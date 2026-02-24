@@ -24,12 +24,18 @@
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      qt6Packages.fcitx5-chinese-addons
-      fcitx5-gtk            # GTK 支持
-    ];
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = with pkgs; [
+        qt6Packages.fcitx5-chinese-addons
+        fcitx5-gtk            # GTK 支持
+	rime-data
+        (fcitx5-rime.override {
+          rimeDataPkgs = [ rime-ice ];
+        })
+      ];
+    };
   };
-
   
   fonts.packages = with pkgs; [
     noto-fonts
@@ -38,4 +44,5 @@
     sarasa-gothic  # 等距更纱黑体，非常适合终端
     wqy_zenhei     # 文泉驿正黑
   ];
+
 }

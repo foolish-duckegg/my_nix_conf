@@ -31,5 +31,17 @@
     '';
     
     home.stateVersion = "25.11";
+
+    home.file = {
+      ".local/share/fcitx5/rime/default.custom.yaml".text = ''
+        patch:
+          __include: rime_ice_suggestion:/
+
+          schema_list:
+            - schema: double_pinyin
+            - schema: rime_ice
+      '';
+      ".local/share/fcitx5/rime/double_pinyin.schema.yaml".source = ../resources/double_pinyin.schema.yaml;
+    };
   };
 }
