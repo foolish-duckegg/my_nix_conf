@@ -46,6 +46,9 @@
 
       # font
       ".local/share/fonts/WeiNiZhuYiLangManXingShu.ttf".source = ../resources/font/WeiNiZhuYiLangManXingShu.ttf;
+
+      # fuzzel theme
+      ".config/fuzzel".source = ../resources/fuzzel;
     };
   };
 }
