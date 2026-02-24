@@ -37,12 +37,34 @@
     };
   };
   
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
-    sarasa-gothic  # 等距更纱黑体，非常适合终端
-    wqy_zenhei     # 文泉驿正黑
-  ];
+  fonts = {
+    packages = with pkgs; [
+      lexend
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      sarasa-gothic  # 等距更纱黑体，非常适合终端
+      wqy_zenhei     # 文泉驿正黑
+    ];
+
+    fontconfig.defaultFonts = {
+      monospace = [ 
+        "NovaMono" 
+	"AaWNZYLMXS"
+        "Noto Sans Mono CJK SC" # 中文等宽回退
+      ];
+  
+      sansSerif = [ 
+        "Lexend"               # 西文无衬线（很圆润）
+        "AaWNZYLMXS"
+        "Noto Sans CJK SC"     # 中文黑体
+      ];
+
+      serif = [ 
+        "Noto Serif" 
+        "Noto Serif CJK SC"     # 中文宋体
+      ];
+    };
+  };
 
 }

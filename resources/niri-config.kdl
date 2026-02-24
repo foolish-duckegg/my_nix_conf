@@ -36,6 +36,11 @@ output "Virtual-1" {
     position x=0 y=0
 }
 
+cursor {
+    xcursor-theme "Bibata-Modern-Amber"
+    xcursor-size 24
+}
+
 layout {
     
     background-color "transparent"
@@ -247,7 +252,7 @@ window-rule {
 
 window-rule {
     match is-active=false
-    opacity 0.7
+    opacity 0.8
 }
 
 window-rule {

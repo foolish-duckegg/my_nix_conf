@@ -9,6 +9,27 @@
     packages = with pkgs; [
       tree
     ];
+
+    # use zsh
+    shell = pkgs.zsh;
+  };
+
+  # zsh
+  # 启用 Zsh 模块
+  programs.zsh = {
+    enable = true;
+   
+    # 自动补全和语法高亮（非常推荐）
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    # 如果你想用 Oh My Zsh
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "sudo" ];
+      theme = "jonathan";
+    };
   };
 
   #home-manager
@@ -45,10 +66,13 @@
       ".config/kitty/kitty.conf".source = ../resources/kitty.conf;
 
       # font
-      ".local/share/fonts/WeiNiZhuYiLangManXingShu.ttf".source = ../resources/font/WeiNiZhuYiLangManXingShu.ttf;
+      ".local/share/fonts".source = ../resources/font;
 
       # fuzzel theme
       ".config/fuzzel".source = ../resources/fuzzel;
+
+      #cursor
+      ".local/share/icons".source = ../resources/cursors;
     };
   };
 }

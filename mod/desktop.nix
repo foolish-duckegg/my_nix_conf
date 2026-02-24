@@ -43,4 +43,20 @@
     };
   };
 
+  # thunar
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin # 右键解压缩
+      thunar-volman         # 移动设备管理
+    ];
+  };
+  services.gvfs.enable = true;    # 开启垃圾桶、网络挂载 (SMB/FTP)、移动设备显示
+  services.tumbler.enable = true; # 开启图片/视频缩略图预览 
+  # 3. 如果在 Niri 下 Thunar 无法保存设置（如侧边栏宽度），需开启：
+  programs.xfconf.enable = true;  # Xfce 配置存储服务
+  environment.systemPackages = with pkgs; [
+    file-roller # 配合 thunar-archive-plugin 使用的解压后端
+  ];
+
 }
