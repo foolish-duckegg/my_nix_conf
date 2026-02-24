@@ -33,12 +33,19 @@
     home.stateVersion = "25.11";
 
     home.file = {
+      # fcitx
       ".local/share/fcitx5/rime/default.custom.yaml".source = ../resources/fcitx/default.custom.yaml;
       ".local/share/fcitx5/rime/double_pinyin.schema.yaml".source = ../resources/fcitx/double_pinyin.schema.yaml;
       ".local/share/fcitx5/themes" = {
         source = ../resources/fcitx/themes;
 	recursive = true;
       };
+
+      # kitty
+      ".config/kitty/kitty.conf".source = ../resources/kitty.conf;
+
+      # font
+      ".local/share/fonts/WeiNiZhuYiLangManXingShu.ttf".source = ../resources/font/WeiNiZhuYiLangManXingShu.ttf;
     };
   };
 }

@@ -5,7 +5,7 @@
   environment = {
     systemPackages = with pkgs; [
       # init
-      vim wget curl git neovim
+      vim wget curl git neovim zip unzip
 
       # icons
       hicolor-icon-theme adwaita-icon-theme librsvg
