@@ -11,7 +11,7 @@
       hicolor-icon-theme adwaita-icon-theme librsvg
 
       # niri configuation
-      kitty fuzzel wayland-utils 
+      kitty fuzzel wayland-utils catppuccin-gtk
 
       # daily
       firefox

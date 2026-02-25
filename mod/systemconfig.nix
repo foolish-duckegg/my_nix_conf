@@ -1,13 +1,13 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, env_settings, ... }:
 
 {
 
   # Set your time zone.
-  time.timeZone = "Asia/Shanghai";
+  time.timeZone = env_settings.timeZone;
 
   # Configure network proxy if necessary
-  networking.proxy.default = "socks4://192.168.122.98:10808";
-  networking.proxy.noProxy = "126.0.0.1,localhost,internal.domain";
+  networking.proxy.default = env_settings.proxy_url;
+  networking.proxy.noProxy = env_settings.no_proxy_url;
 
   # vm copied-board sync
   services.spice-vdagentd.enable = true;

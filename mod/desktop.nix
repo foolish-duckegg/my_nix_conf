@@ -25,6 +25,11 @@
     wayland.enable = true;
   }; 
 
+  # 全局兼容wayland
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
   services.dbus.enable = true;
 
   xdg.portal = {

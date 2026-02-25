@@ -1,6 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
+
   imports =
     [
       ./hardware-configuration.nix
@@ -23,6 +24,9 @@
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
+
+  # enable unfree solf ware
+  nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "25.11"; # Did you read the comment?
 

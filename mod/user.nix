@@ -1,17 +1,23 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, env_settings, ... }:
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.duckegg = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
-    initialPassword = "123456";
-    packages = with pkgs; [
-      tree
-    ];
+  users.users = {
+    "${env_settings.user_name}" = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+      hashedPassword = env_settings.passwd;
+      packages = with pkgs; [
+        tree 
+	
+        (vscode.fhsWithPackages (ps: with ps; [rustup zlib]))
 
-    # use zsh
-    shell = pkgs.zsh;
+	obsidian
+      ];
+
+      # use zsh
+      shell = pkgs.zsh;
+    };
   };
 
   # zsh
@@ -33,22 +39,23 @@
   };
 
   #home-manager
-  home-manager.users.duckegg = {pkgs, ... }: {
+  home-manager.users = {
+    "${env_settings.user_name}" = {pkgs, ... }: {
 
-    programs = {
-    # 让 home manager 接管 ~/.profile
-      bash.enable = true;
+      programs = {
+      # 让 home manager 接管 ~/.profile
+        bash.enable = true;
 
-      zsh = {
-        enable = true;
-        initExtra = builtins.readFile ../resources/.zshrc;
+        zsh = {
+          enable = true;
+          initExtra = builtins.readFile ../resources/.zshrc;
+        };
+  
+        neovim = {
+          enable = true;
+          viAlias = true;
+        };
       };
-
-      neovim = {
-        enable = true;
-	viAlias = true;
-      };
-    };
 
     home = {
 
@@ -82,8 +89,8 @@
         #cursor
         ".local/share/icons".source = ../resources/cursors;
 
-	#nvi -> nvim
-	".local/bin/nvi".source = "${pkgs.neovim}/bin/nvim";
+        #nvi -> nvim
+        ".local/bin/nvi".source = "${pkgs.neovim}/bin/nvim";
       };
     };
 
@@ -94,11 +101,12 @@
       prefer-no-csd
 
       binds {
-      	Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+        Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
       }
     '';
     
     home.stateVersion = "25.11";
 
+    };
   };
 }

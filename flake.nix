@@ -1,4 +1,4 @@
-{
+{ 
 
   description = "my nix";
 
@@ -22,7 +22,12 @@
   outputs = {self, nixpkgs, home-manager, dms, ... }@inputs: {
     nixosConfigurations.duckegg-nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
+      specialArgs = { 
+        inherit inputs; 
+	
+        # globle vars
+        env_settings = import ./sys_settings.nix;
+      };
       modules = [
         ./configuration.nix
 
