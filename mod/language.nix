@@ -55,13 +55,13 @@
       ];
   
       sansSerif = [ 
-        "Lexend"               # 西文无衬线（很圆润）
+        "Sour Gummy"               # 西文无衬线（很圆润）
         "AaWNZYLMXS"
         "Noto Sans CJK SC"     # 中文黑体
       ];
 
       serif = [ 
-        "Noto Serif" 
+        "Young Serif" 
         "Noto Serif CJK SC"     # 中文宋体
       ];
     };
