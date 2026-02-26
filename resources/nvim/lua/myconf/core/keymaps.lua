@@ -21,3 +21,6 @@ keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- 开启nvim-tree
 -- buffer切换
 keymap.set("n", "<S-L>", ":bnext<CR>")
 keymap.set("n", "<S-H>", ":bprevious<CR>")
+
+-- hop.lua 里的定义快捷键
+-- toggleterm.lua 里定义的快捷键

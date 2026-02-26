@@ -8,7 +8,7 @@
       extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
       hashedPassword = env_settings.passwd;
       packages = with pkgs; [
-        tree 
+        tree yazi ueberzugpp ffmpegthumbnailer
 	
         (vscode.fhsWithPackages (ps: with ps; [rustup zlib]))
 
@@ -68,6 +68,17 @@
 	    nvim-autopairs
 	    bufferline-nvim
 	    gitsigns-nvim
+	    hop-nvim
+	    diffview-nvim
+	    toggleterm-nvim
+	    which-key-nvim
+	    yazi-nvim
+
+        # 自动格式化代码
+	    # conform-nvim
+        # md 预览
+        # markdown-preview-nvim
+
 	  ];
         };
       };
@@ -104,8 +115,6 @@
         #cursor
         ".local/share/icons".source = ../resources/cursors;
 
-        #nvi -> nvim
-        ".local/bin/nvi".source = "${pkgs.neovim}/bin/nvim";
 	#nvi 插件配置
 	".config/nvim/init.lua".source = ../resources/nvim/init.lua;
 	".config/nvim/lua/myconf".source = ../resources/nvim/lua/myconf;
