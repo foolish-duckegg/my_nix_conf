@@ -45,6 +45,9 @@
       noto-fonts-cjk-serif
       sarasa-gothic  # 等距更纱黑体，非常适合终端
       wqy_zenhei     # 文泉驿正黑
+      
+      # neovim的字体
+      nerd-fonts.jetbrains-mono
     ];
 
     fontconfig.defaultFonts = {

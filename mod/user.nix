@@ -54,6 +54,21 @@
         neovim = {
           enable = true;
           viAlias = true;
+	  plugins = with pkgs.vimPlugins; [
+            (nvim-treesitter.withPlugins (p: with p; [
+	      nix lua python cpp json java html css bash c javascript markdown markdown_inline yaml toml regex
+	    ]))
+	    kanagawa-nvim
+	    lualine-nvim
+	    nvim-web-devicons
+	    nvim-tree-lua
+	    vim-tmux-navigator
+	    rainbow-delimiters-nvim
+	    comment-nvim
+	    nvim-autopairs
+	    bufferline-nvim
+	    gitsigns-nvim
+	  ];
         };
       };
 
@@ -91,6 +106,8 @@
 
         #nvi -> nvim
         ".local/bin/nvi".source = "${pkgs.neovim}/bin/nvim";
+	#nvi 插件配置
+	".config/nvim".source = ../resources/nvim;
       };
     };
 
