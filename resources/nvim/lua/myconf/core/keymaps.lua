@@ -19,5 +19,5 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 -- 插件改键
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- 开启nvim-tree
 -- buffer切换
-keymap.set("n", "<C-L>", ":bnext<CR>")
-keymap.set("n", "<C-H>", ":bprevious<CR>")
+keymap.set("n", "<S-L>", ":bnext<CR>")
+keymap.set("n", "<S-H>", ":bprevious<CR>")
