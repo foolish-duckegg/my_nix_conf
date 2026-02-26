@@ -107,7 +107,8 @@
         #nvi -> nvim
         ".local/bin/nvi".source = "${pkgs.neovim}/bin/nvim";
 	#nvi 插件配置
-	".config/nvim".source = ../resources/nvim;
+	".config/nvim/init.lua".source = ../resources/nvim/init.lua;
+	".config/nvim/lua/myconf".source = ../resources/nvim/lua/myconf;
       };
     };
 
