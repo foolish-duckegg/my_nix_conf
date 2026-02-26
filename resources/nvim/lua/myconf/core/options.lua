@@ -31,7 +31,4 @@ opt.smartcase = true
 opt.termguicolors = true
 opt.signcolumn = yes
 
--- 主题 -wave -dragon -lotus
-vim.cmd("colorscheme kanagawa-dragon")
-
 
