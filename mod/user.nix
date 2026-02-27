@@ -31,7 +31,7 @@
     syntaxHighlighting.enable = true;
 
     # 如果你想用 Oh My Zsh
-    oh-my-zsh = {
+    ohMyZsh = {
       enable = true;
       plugins = [ "git" "sudo" ];
       theme = "jonathan";
@@ -48,7 +48,7 @@
 
         zsh = {
           enable = true;
-          initExtra = builtins.readFile ../resources/.zshrc;
+          initContent = builtins.readFile ../resources/.zshrc;
         };
   
         neovim = {
@@ -74,12 +74,38 @@
 	    which-key-nvim
 	    yazi-nvim
 	    mini-nvim
+	    nvim-cmp
+	    cmp-nvim-lsp
+	    cmp-buffer
+	    cmp-path
+	    conform-nvim
+            markdown-preview-nvim
+	    bufdelete-nvim
 
-        # 自动格式化代码
-	    # conform-nvim
-        # md 预览
-        # markdown-preview-nvim
+	  ];
+	  extraPackages = with pkgs; [
+	    # lsp
+	    nixd 
+	    lua-language-server
+	    pyright 
+	    clang-tools 
+	    vscode-langservers-extracted 
+	    nodePackages.bash-language-server
+	    nodePackages.typescript-language-server
+	    marksman
+            yaml-language-server
+	    # jdtls
 
+	    # conform 
+	    nixfmt-rfc-style
+	    stylua
+	    black
+	    clang-tools
+	    nodePackages.prettier
+	    shfmt
+
+	    # markdown-preview 需要nodejs
+	    nodejs
 	  ];
         };
       };
