@@ -73,6 +73,7 @@
 	    toggleterm-nvim
 	    which-key-nvim
 	    yazi-nvim
+	    mini-nvim
 
         # 自动格式化代码
 	    # conform-nvim

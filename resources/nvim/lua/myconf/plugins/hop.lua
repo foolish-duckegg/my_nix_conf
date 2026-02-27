@@ -22,7 +22,7 @@ end, opts)
 vim.keymap.set('n', '<leader>w', '<cmd>HopWord<CR>', opts)
 
 -- 3. 行跳转 (快速选行)
-vim.keymap.set('n', '<leader>l', '<cmd>HopLine<CR>', opts)
+-- vim.keymap.set('n', '<leader>l', '<cmd>HopLine<CR>', opts)
 
 -- 4. 模式搜索跳转 (输入 pattern 后跳转)
 -- vim.keymap.set('n', '<leader>/', '<cmd>HopPattern<CR>', opts)

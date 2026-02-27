@@ -9,18 +9,7 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- 正常模式
-keymap.set("n", "<leader>sv", "<C-w>v") -- 水平新增窗口
-keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口
-
--- 取消搜索的高亮
-keymap.set("n", "<leader>nh", ":nohl<CR>")
-
--- 插件改键
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- 开启nvim-tree
--- buffer切换
-keymap.set("n", "<S-L>", ":bnext<CR>")
-keymap.set("n", "<S-H>", ":bprevious<CR>")
-
--- hop.lua 里的定义快捷键
--- toggleterm.lua 里定义的快捷键
+-- 一下文件都有定义新的快捷键
+-- hop.lua
+-- toggleterm.lua
+-- keymaps.lua 

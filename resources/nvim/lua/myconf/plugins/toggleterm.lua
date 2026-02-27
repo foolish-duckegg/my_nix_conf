@@ -1,6 +1,5 @@
 require("toggleterm").setup({
   size = 20,
-  open_mapping = [[<c-\>]], -- 快捷键：Ctrl + \ 打开/关闭
   hide_numbers = true,
   shade_terminals = true,
   shading_factor = 2,
