@@ -1,4 +1,11 @@
-{ config, lib, pkgs, inputs, env_settings, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  env_settings,
+  ...
+}:
 
 {
 
@@ -11,4 +18,17 @@
 
   # vm copied-board sync
   services.spice-vdagentd.enable = true;
+
+  # boot.loader.grub.efiSupport = true;
+  # boot.loader.grub.efiInstallAsRemovable = true;
+  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  # Define on which hard drive you want to install Grub.
+  boot.loader.grub.device = env_settings.boot_device; # or "nodev" for efi only
+  boot.loader.systemd-boot.enable = false;
+
+  networking.hostName = env_settings.host_name; # Define your hostname.
+
+  # enable unfree solf ware
+  nixpkgs.config.allowUnfree = true;
+
 }
