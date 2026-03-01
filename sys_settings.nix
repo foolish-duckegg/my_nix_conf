@@ -1,6 +1,8 @@
 {
   # 系统版本
   sys_version = "25.11";
+  # 是否带有nvidia驱动
+  is_including_nvidia = false;
   # boot启动目录
   boot_device = "/dev/vda";
   # 用户名，登录时用该用户名，同时生成 /home/$user_name 的 home 目录
@@ -26,5 +28,12 @@
       transform "normal"
       position x=0 y=0
     }
+
+
+    // output "HDMI-A-1" {
+    //   mode  "2560x1440@120.000"
+    //   position x=1920 y=0
+    // }
+
   '';
 }

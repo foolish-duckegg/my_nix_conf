@@ -28,6 +28,7 @@ in
         yazi
         ueberzugpp
         ffmpegthumbnailer
+        btop
 
         (vscode.fhsWithPackages (
           ps: with ps; [

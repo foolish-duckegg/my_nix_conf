@@ -47,6 +47,7 @@
           ./mod/user.nix
           ./mod/packages.nix
           ./mod/language.nix
+          ./mod/nvidia.nix
 
           #home manager
           home-manager.nixosModules.home-manager
