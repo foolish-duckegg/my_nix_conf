@@ -21,6 +21,8 @@
   no_proxy_url = "127.0.0.1,localhost,internal.domain";
 
   # 显示器设置
+  # 首次运行把这个赋值成一个空字串
+  # 进入桌面后运行 `niri msg outputs` 查看显示器名称和支持的分辨率/刷新率
   display_monitor = ''
     output "Virtual-1" {
       mode "1920x1080@60.000"
