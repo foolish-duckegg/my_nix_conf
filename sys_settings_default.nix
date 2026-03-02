@@ -24,18 +24,11 @@
   # 首次运行把这个赋值成一个空字串
   # 进入桌面后运行 `niri msg outputs` 查看显示器名称和支持的分辨率/刷新率
   display_monitor = ''
-    output "Virtual-1" {
-      mode "1920x1080@60.000"
-      scale 1
-      transform "normal"
-      position x=0 y=0
-    }
-
-
-    // output "HDMI-A-1" {
-    //   mode  "2560x1440@120.000"
-    //   position x=1920 y=0
+    // output "Virtual-1" {
+    //   mode "1920x1080@60.000"
+    //   scale 1
+    //   transform "normal"
+    //   position x=0 y=0
     // }
-
   '';
 }

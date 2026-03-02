@@ -28,15 +28,11 @@ sudo nixos-generate-config
 git clone https://github.com/foolish-duckegg/my_nix_conf.git
 ```
 
-进入目录
+进入目录,复制模板文件为 `sys_settings.nix`，按照注释修改配置
 
 ```bash
 cd my_nix_conf
-```
-
-按照注释修改 `sys_settings.nix`
-
-```bash
+cp sys_settings_default.nix sys_settings.nix
 vi ./sys_settings
 ```
 
