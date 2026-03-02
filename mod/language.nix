@@ -26,6 +26,15 @@
     LC_TIME = "zh_CN.UTF-8";
   };
 
+  nixpkgs.config.packageOverrides = pkgs: {
+    librime = pkgs.librime.override {
+      plugins = with pkgs; [
+        librime-lua
+        librime-octagram
+      ];
+    };
+  };
+
   # 输入法配置 (推荐 Fcitx5)
   i18n.inputMethod = {
     enable = true;

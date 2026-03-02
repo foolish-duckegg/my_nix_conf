@@ -100,6 +100,7 @@ reboot
 
 - [hosxy/Fcitx5-Material-Color](https://github.com/hosxy/Fcitx5-Material-Color)
 - [tonyfettes/fcitx5-nord](https://github.com/tonyfettes/fcitx5-nord)
+- [rimeinn/rime-moran](https://github.com/rimeinn/rime-moran)
 - [ful1e5/Bibata_Cursor](https://github.com/ful1e5/Bibata_Cursor)
 - [dracula/fuzzel](https://github.com/dracula/fuzzel)
 - 大量参考[b站视频](https://www.bilibili.com/video/BV1XKrbBKEtL)

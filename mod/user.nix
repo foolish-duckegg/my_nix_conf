@@ -172,32 +172,49 @@ in
             "$HOME/.local/bin"
           ];
 
-          file = {
-            # fcitx
-            ".local/share/fcitx5/rime/default.custom.yaml".source = ../resources/fcitx/default.custom.yaml;
-            ".local/share/fcitx5/rime/double_pinyin.schema.yaml".source =
-              ../resources/fcitx/double_pinyin.schema.yaml;
-            ".local/share/fcitx5/themes" = {
-              source = ../resources/fcitx/themes;
-              recursive = true;
+          file =
+            let
+              moran_dir = ../resources/fcitx/rime-moran;
+              rime_dir = ../resources/fcitx/rime;
+              rime_moran_file = lib.mapAttrs' (
+                name: type:
+                lib.nameValuePair ".local/share/fcitx5/rime/${name}" {
+                  source = "${moran_dir}/${name}";
+                }
+              ) (builtins.readDir moran_dir);
+
+              rime_file = lib.mapAttrs' (
+                name: type:
+                lib.nameValuePair ".local/share/fcitx5/rime/${name}" {
+                  source = "${rime_dir}/${name}";
+                }
+              ) (builtins.readDir rime_dir);
+            in
+            rime_moran_file
+            # // rime_file
+            // {
+              # fcitx
+              ".local/share/fcitx5/themes" = {
+                source = ../resources/fcitx/themes;
+                recursive = true;
+              };
+
+              # kitty
+              ".config/kitty/kitty.conf".source = ../resources/kitty.conf;
+
+              # font
+              ".local/share/fonts".source = ../resources/font;
+
+              # fuzzel theme
+              ".config/fuzzel".source = ../resources/fuzzel;
+
+              #cursor
+              ".local/share/icons".source = ../resources/cursors;
+
+              #nvi 插件配置
+              ".config/nvim/init.lua".source = ../resources/nvim/init.lua;
+              ".config/nvim/lua/myconf".source = ../resources/nvim/lua/myconf;
             };
-
-            # kitty
-            ".config/kitty/kitty.conf".source = ../resources/kitty.conf;
-
-            # font
-            ".local/share/fonts".source = ../resources/font;
-
-            # fuzzel theme
-            ".config/fuzzel".source = ../resources/fuzzel;
-
-            #cursor
-            ".local/share/icons".source = ../resources/cursors;
-
-            #nvi 插件配置
-            ".config/nvim/init.lua".source = ../resources/nvim/init.lua;
-            ".config/nvim/lua/myconf".source = ../resources/nvim/lua/myconf;
-          };
         };
 
         # niri config
