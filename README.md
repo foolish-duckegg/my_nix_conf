@@ -33,7 +33,7 @@ git clone https://github.com/foolish-duckegg/my_nix_conf.git
 ```bash
 cd my_nix_conf
 cp sys_settings_default.nix sys_settings.nix
-vi ./sys_settings
+vi ./sys_settings_default.nix
 ```
 
 ## 3. 执行系统刷新命令
@@ -63,7 +63,7 @@ reboot
   1. 右键右上角键盘图标，点击配置
   2. 双击 "中州韵"，让他进入左边，点击应用
   3. 点击标签栏 “Addons”，配置“经典用户界面”的主题，选择`Nord-Light` 和 `Nord-Dark`，点击应用
-  4. 点击标签栏 “Global Options”，切换输入法改成 ”左 Ctrl“，取消 “临时切换输入法”，点应用
+  4. 点击标签栏 “Global Options”，切换输入法改成 ”左 Ctrl“，取消 “临时切换输入法”，取消“在程序中显示预编辑文本”，点应用
   5. !!! : **右键右上角键盘图标，点击重启。然后监视** `~/.local/share/fcitx5/rime/build` **，直到文件夹数量不再变化，才能使用输入法。** 10+ 个文件。否则使用太快，rime还没编译完，导致看起来和崩了一样。每次重新部署输入法都建议如此。
 - DMS 配置
   1. 壁纸

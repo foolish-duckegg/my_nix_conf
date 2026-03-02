@@ -36,8 +36,6 @@ in
             zlib
           ]
         ))
-
-        obsidian
       ];
 
       # use zsh

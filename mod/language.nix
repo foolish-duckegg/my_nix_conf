@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 {
+  environment.variables = {
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+  };
+
   # 设置时间轴
   time.timeZone = "Asia/Shanghai";
 
@@ -28,7 +34,7 @@
       waylandFrontend = true;
       addons = with pkgs; [
         qt6Packages.fcitx5-chinese-addons
-        fcitx5-gtk            # GTK 支持
+        fcitx5-gtk # GTK 支持
         rime-data
         (fcitx5-rime.override {
           rimeDataPkgs = [ rime-ice ];
@@ -36,36 +42,36 @@
       ];
     };
   };
-  
+
   fonts = {
     packages = with pkgs; [
       lexend
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
-      sarasa-gothic  # 等距更纱黑体，非常适合终端
-      wqy_zenhei     # 文泉驿正黑
-      
+      sarasa-gothic # 等距更纱黑体，非常适合终端
+      wqy_zenhei # 文泉驿正黑
+
       # neovim的字体
       nerd-fonts.jetbrains-mono
     ];
 
     fontconfig.defaultFonts = {
-      monospace = [ 
-        "NovaMono" 
-	"AaWNZYLMXS"
+      monospace = [
+        "NovaMono"
+        "AaWNZYLMXS"
         "Noto Sans Mono CJK SC" # 中文等宽回退
       ];
-  
-      sansSerif = [ 
-        "Sour Gummy"               # 西文无衬线（很圆润）
+
+      sansSerif = [
+        "Sour Gummy" # 西文无衬线（很圆润）
         "AaWNZYLMXS"
-        "Noto Sans CJK SC"     # 中文黑体
+        "Noto Sans CJK SC" # 中文黑体
       ];
 
-      serif = [ 
-        "Young Serif" 
-        "Noto Serif CJK SC"     # 中文宋体
+      serif = [
+        "Young Serif"
+        "Noto Serif CJK SC" # 中文宋体
       ];
     };
   };

@@ -27,6 +27,7 @@
       kitty
       fuzzel
       wayland-utils
+      xwayland-satellite
       catppuccin-gtk
 
       # daily

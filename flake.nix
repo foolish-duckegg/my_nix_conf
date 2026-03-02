@@ -49,6 +49,12 @@
           ./mod/language.nix
           ./mod/nvidia.nix
 
+          # 可选包
+          ./mod/developing-packs.nix
+          ./mod/games-packs.nix
+          ./mod/living-packs.nix
+          ./mod/servers-packs.nix
+
           #home manager
           home-manager.nixosModules.home-manager
           {

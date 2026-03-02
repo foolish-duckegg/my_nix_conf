@@ -2,7 +2,7 @@
   # 系统版本
   sys_version = "25.11";
   # 是否带有nvidia驱动
-  is_including_nvidia = false;
+  is_including_nvidia = true;
   # boot启动目录
   boot_device = "/dev/vda";
   # 用户名，登录时用该用户名，同时生成 /home/$user_name 的 home 目录
@@ -17,7 +17,7 @@
   timeZone = "Asia/Shanghai";
 
   # 代理配置，若无则注释掉
-  proxy_url = "socks5://192.168.122.98:10808";
+  proxy_url = "socks5://192.168.1.107:10808";
   no_proxy_url = "127.0.0.1,localhost,internal.domain";
 
   # 显示器设置
@@ -34,7 +34,7 @@
 
   # 附加软件包
   developing_packages = false;
-  games_packages = false;
-  living_packages = false;
+  games_packages = true;
+  living_packages = true;
   servers_packages = false;
 }
