@@ -60,4 +60,5 @@ wk.add({
 	{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "telescope 打开文件" },
 	{ "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "telescope 打开模糊查询(liver_grep)" },
 	{ "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "telescope 查找git" },
+	{ "<leader>se", vim.diagnostic.setloclist, desc = "show errors" },
 })
