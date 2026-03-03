@@ -79,6 +79,15 @@ in
             initContent = builtins.readFile ../resources/.zshrc;
           };
 
+          chromium = {
+            enable = true;
+            extensions = [
+              { id = "hfjbmagddngcpeloejdejnfgbamkjaeg"; }
+              # Vimium C
+              # 配置页面：chrome-extension://hfjbmagddngcpeloejdejnfgbamkjaeg/pages/options.html#commands
+            ];
+          };
+
           neovim = {
             enable = true;
             viAlias = true;
@@ -162,10 +171,6 @@ in
         };
 
         home = {
-
-          packages = with pkgs; [
-            chromium
-          ];
 
           # environment
           sessionPath = [
