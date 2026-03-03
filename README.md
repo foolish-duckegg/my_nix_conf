@@ -28,12 +28,12 @@ sudo nixos-generate-config
 git clone https://github.com/foolish-duckegg/my_nix_conf.git
 ```
 
-进入目录,复制模板文件为 `sys_settings.nix`，按照注释修改配置
+进入目录,复制模板文件为 `/etc/nixos/sys_settings.nix`，按照注释修改配置
 
 ```bash
 cd my_nix_conf
-cp sys_settings_default.nix sys_settings.nix
-vi ./sys_settings_default.nix
+sudo cp sys_settings_default.nix /etc/nixos/sys_settings.nix
+sudo vi /etc/nixos/sys_settings.nix
 ```
 
 ## 3. 执行系统刷新命令
@@ -44,7 +44,7 @@ sudo nix-rebuild switch --flake .$[sys_settings.nix里的host_name]
 
 可选参数:
 
-- `--impare` : 把 `/etc/nixos/*onfiguration.nix` 移动到项目文件夹下，并且改 `./flake.nix` 里的 `/etc/nixos/configuration.nix` -> `./configuration.nix`，则可以不写
+- `--impare` : 把 `/etc/nixos/*` 移动到项目文件夹下，并且改 `./flake.nix` 里的 `/etc/nixos/configuration.nix` -> `./configuration.nix`，`/etc/nixos/sys_settings.nix` -> `./sys_settings.nix`，则可以不写
 - `--offline` : 第二次之后执行，若没有添加新包，可以使用此参数不联网更新
 
 若在大陆遇到 `Go` 代理问题，可以先执行 `export GOPROXY=https://goproxy.cn,direct` 指定国内镜像

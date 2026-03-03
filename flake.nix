@@ -28,7 +28,7 @@
       ...
     }@inputs:
     let
-      sys_settings = import ./sys_settings.nix;
+      sys_settings = import /etc/nixos/sys_settings.nix;
     in
     {
       nixosConfigurations."${sys_settings.host_name}" = nixpkgs.lib.nixosSystem {
@@ -37,7 +37,7 @@
           inherit inputs;
 
           # globle vars
-          env_settings = import ./sys_settings.nix;
+          env_settings = sys_settings;
         };
         modules = [
           /etc/nixos/configuration.nix
