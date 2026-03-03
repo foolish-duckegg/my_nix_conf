@@ -138,6 +138,8 @@ in
               telescope-nvim
               plenary-nvim
               telescope-fzf-native-nvim
+              nvim-ufo
+              promise-async
             ];
             extraPackages = with pkgs; [
               # lsp

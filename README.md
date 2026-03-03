@@ -97,6 +97,7 @@ reboot
     - 终端模式 `jk` 退出终端输入模式
   - 插入模式 `[Tab]` / `[Enter]` 自动补全
   - 代码补全选择时 `<[ctrl]+j>` / `<[ctrl]+k>` 上下选择
+  - 代码折叠 `z` 用 `which-key` 查看相关快捷键
   - 其他详见 `./resources/nvim/lua/myconf/plugins/which-key.lua`
 
 ## -1. 待完成

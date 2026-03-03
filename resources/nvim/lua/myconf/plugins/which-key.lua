@@ -61,4 +61,6 @@ wk.add({
 	{ "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "telescope 打开模糊查询(liver_grep)" },
 	{ "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "telescope 查找git" },
 	{ "<leader>se", vim.diagnostic.setloclist, desc = "show errors" },
+	{ "<leader>cf", require("ufo").closeAllFolds, desc = "折叠所有标签(code folds)" },
+	{ "<leader>co", require("ufo").openAllFolds, desc = "折叠所有标签(code open)" },
 })
