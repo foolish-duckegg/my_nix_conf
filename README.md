@@ -103,6 +103,7 @@ reboot
 ## -1. 待完成
 
 - 默认系统字体写入 `sys_settings` 里
+- 支持 UEFI 配置
 
 # 感谢：
 

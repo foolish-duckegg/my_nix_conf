@@ -3,8 +3,6 @@
   sys_version = "25.11";
   # 是否带有nvidia驱动
   is_including_nvidia = false;
-  # boot启动目录
-  boot_device = "/dev/vda";
   # 用户名，登录时用该用户名，同时生成 /home/$user_name 的 home 目录
   user_name = "duckegg";
   # 主机名
