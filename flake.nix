@@ -17,6 +17,9 @@
       url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # nix-flatpak
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs =

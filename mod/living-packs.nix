@@ -6,17 +6,37 @@
   env_settings,
   ...
 }:
-lib.mkIf env_settings.living_packages {
-  environment.systemPackages = with pkgs; [
-    # 推荐使用 uos 版本，对 Linux 支持较好
-    # wechat-uos
-    # 或者尝试较新的 wechat-2.0
-    # "wechat-2.0"
-    wechat
+{
+  imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
+  config = lib.mkIf env_settings.living_packages {
+    environment.systemPackages = with pkgs; [
+      # 推荐使用 uos 版本，对 Linux 支持较好
+      # wechat-uos
+      # 或者尝试较新的 wechat-2.0
+      # "wechat-2.0"
+      wechat
 
-    qq
+      qq
 
-    # 音乐
-    go-swagger
-  ];
+      # 音乐
+      spotify
+
+    ];
+
+    # services.flatpak = {
+    #   enable = true;
+    #   # 自动添加 Flathub 仓库
+    #   remotes = [
+    #     {
+    #       name = "flathub";
+    #       location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+    #     }
+    #   ];
+    #   # 在这里写入 Cisco Webex 的 ID
+    #   packages = [
+    #     "com.cisco.Webex"
+    #   ];
+    #   update.auto.enable = true;
+    # };
+  };
 }

@@ -134,6 +134,7 @@ in
               cmp-path
               conform-nvim
               markdown-preview-nvim
+              markview-nvim
               bufdelete-nvim
               telescope-nvim
               plenary-nvim
