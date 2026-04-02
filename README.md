@@ -104,6 +104,7 @@ reboot
 
 - 默认系统字体写入 `sys_settings` 里
 - 支持 UEFI 配置
+- markview 配置完善
 
 # 感谢：
 

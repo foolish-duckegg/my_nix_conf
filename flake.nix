@@ -5,6 +5,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
     # Home Manager
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -28,16 +30,22 @@
       nixpkgs,
       home-manager,
       dms,
+      nixpkgs-unstable,
       ...
     }@inputs:
     let
       sys_settings = import /etc/nixos/sys_settings.nix;
+      sy = "x86_64-linux";
+      unstable = import nixpkgs-unstable {
+        inherit sy;
+        config.allowUnfree = true;
+      };
     in
     {
       nixosConfigurations."${sys_settings.host_name}" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = sy;
         specialArgs = {
-          inherit inputs;
+          inherit inputs unstable;
 
           # globle vars
           env_settings = sys_settings;

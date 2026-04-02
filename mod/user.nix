@@ -4,6 +4,7 @@
   pkgs,
   inputs,
   env_settings,
+  unstable,
   ...
 }:
 
@@ -29,6 +30,7 @@ in
         ueberzugpp
         ffmpegthumbnailer
         btop
+        ripgrep
 
         (vscode.fhsWithPackages (
           ps: with ps; [
@@ -59,6 +61,7 @@ in
       plugins = [
         "git"
         "sudo"
+        "z"
       ];
       theme = "jonathan";
     };
@@ -134,13 +137,15 @@ in
               cmp-path
               conform-nvim
               markdown-preview-nvim
-              markview-nvim
+              unstable.vimPlugins.markview-nvim
               bufdelete-nvim
               telescope-nvim
               plenary-nvim
               telescope-fzf-native-nvim
               nvim-ufo
               promise-async
+              indent-blankline-nvim
+              obsidian-nvim
             ];
             extraPackages = with pkgs; [
               # lsp

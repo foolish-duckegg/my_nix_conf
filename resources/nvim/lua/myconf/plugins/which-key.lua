@@ -63,4 +63,31 @@ wk.add({
 	{ "<leader>se", vim.diagnostic.setloclist, desc = "show errors" },
 	{ "<leader>cf", require("ufo").closeAllFolds, desc = "折叠所有标签(code folds)" },
 	{ "<leader>co", require("ufo").openAllFolds, desc = "折叠所有标签(code open)" },
+	{
+		"<leader>na",
+		function()
+			vim.ui.input({ prompt = "Atomic Note Title: " }, function(title)
+				if title == "" then
+					print("Cancelled create note")
+					return
+				end
+
+				local id = os.date("%Y%m%d-%H%M%S")
+
+				-- 1. Create the note
+				vim.cmd("Obsidian new " .. title)
+
+				-- 2. Wait 100ms for the buffer to initialize, then insert a SPECIFIC template
+				vim.defer_fn(function()
+					vim.api.nvim_buf_set_lines(0, 0, -1, false, {})
+					vim.b.my_custom_title = title
+					vim.b.my_custom_id = id
+
+					-- Change "Atomic_Note" to the exact name of your file in 99_Templates/
+					vim.cmd("Obsidian template")
+				end, 150)
+			end)
+		end,
+		desc = "Create New Atomic Note with Template",
+	},
 })

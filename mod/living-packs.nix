@@ -21,6 +21,9 @@
       # 音乐
       spotify
 
+      # office
+      libreoffice
+
     ];
 
     # services.flatpak = {
