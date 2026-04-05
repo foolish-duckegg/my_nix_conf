@@ -46,11 +46,24 @@ local spec = require("markview.spec")
 spec.config = vim.deepcopy(spec.default)
 
 -- 2. 在这个“拷贝”出来的模板上进行修改
--- 解决你之前的标题编号、列表缩进等问题
-spec.config.preview.enable_hybrid_mode = true
-spec.config.preview.modes = { "n", "no", "c" } -- 移除 "i" 解决全屏变源码
-spec.config.preview.linewise_hybrid_mode = true
-spec.config.experimental.linewise_ignore_org_indent = true
+spec.config.preview.enable = true
+spec.config.preview.icon_provider = "devicons"
+spec.config.preview.modes = { "n", "v", "c" } -- 启用预览的模式
+spec.config.preview.hybrid_modes = { "n", "v" } -- 启用混合模式的模式
+spec.config.preview.enable_hybrid_mode = true -- 默认关闭混合模式
+spec.config.preview.linewise_hybrid_mode = true -- 默认开启行级模式
+spec.config.preview.debounce = 0
 
 -- 3. 最后再执行 setup
 require("markview").setup(spec.config)
+
+-- require("markview").setup({
+-- 	preview = {
+-- 		enable = true,
+-- 		icon_provider = "devicons",
+-- 		modes = { "n", "v", "c", "i", "no" }, -- 启用预览的模式
+-- 		hybrid_modes = { "n", "v" }, -- 启用混合模式的模式
+-- 		enable_hybrid_mode = true, -- 默认关闭混合模式
+-- 		linewise_hybrid_mode = false, -- 默认开启行级模式
+-- 	},
+-- })

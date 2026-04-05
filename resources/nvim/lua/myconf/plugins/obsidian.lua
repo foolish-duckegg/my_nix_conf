@@ -1,4 +1,5 @@
 require("obsidian").setup({
+	-- ui = { enable = false },
 	notes_subdir = "00_Inbox",
 	new_notes_location = "00_Inbox",
 	frontmatter = {
