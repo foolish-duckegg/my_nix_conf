@@ -32,6 +32,9 @@
 
       # daily
       firefox
+
+      # develop environment
+      python311
     ];
 
     pathsToLink = [ "/share/icons" ];
