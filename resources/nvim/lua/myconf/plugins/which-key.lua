@@ -90,4 +90,8 @@ wk.add({
 		end,
 		desc = "Create New Atomic Note with Template",
 	},
+
+	{ "<leader>o", group = "obsidian" },
+	{ "<leader>of", "<cmd>Obsidian follow_link<cr>", desc = "obsidian follow link" },
+	{ "<leader>os", "<cmd>Obsidian search<cr>", desc = "obsidian search" },
 })

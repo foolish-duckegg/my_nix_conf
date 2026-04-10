@@ -84,11 +84,12 @@ in
 
           chromium = {
             enable = true;
-            extensions = [
-              { id = "hfjbmagddngcpeloejdejnfgbamkjaeg"; }
-              # Vimium C
-              # 配置页面：chrome-extension://hfjbmagddngcpeloejdejnfgbamkjaeg/pages/options.html#commands
-            ];
+            package = pkgs.google-chrome;
+            # extensions = [
+            #   { id = "hfjbmagddngcpeloejdejnfgbamkjaeg"; }
+            #   # Vimium C
+            #   # 配置页面：chrome-extension://hfjbmagddngcpeloejdejnfgbamkjaeg/pages/options.html#commands
+            # ];
           };
 
           neovim = {
