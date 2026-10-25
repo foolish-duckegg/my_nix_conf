@@ -9,3 +9,7 @@ zstyle :compinstall filename '/home/duckegg/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+typeset -U path
+path=(~/env $path)
+export PATH

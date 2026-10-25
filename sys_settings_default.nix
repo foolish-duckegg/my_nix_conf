@@ -17,6 +17,8 @@
   # 代理配置，若无则注释掉
   proxy_url = "socks5://192.168.122.98:10808";
   no_proxy_url = "127.0.0.1,localhost,internal.domain";
+  # nix-ld
+  nix_ld = false;
 
   # 显示器设置
   # 首次运行把这个赋值成一个空字串
@@ -35,4 +37,5 @@
   games_packages = false;
   living_packages = false;
   servers_packages = false;
+  academic_packages = false;
 }

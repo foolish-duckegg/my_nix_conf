@@ -228,6 +228,9 @@ in
               #nvi 插件配置
               ".config/nvim/init.lua".source = ../resources/nvim/init.lua;
               ".config/nvim/lua/myconf".source = ../resources/nvim/lua/myconf;
+
+              #yazi 配置
+              ".config/yazi/yazi.toml".source = ../resources/yazi/yazi.toml;
             };
         };
 

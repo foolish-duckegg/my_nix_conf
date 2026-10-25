@@ -65,6 +65,7 @@
           ./mod/games-packs.nix
           ./mod/living-packs.nix
           ./mod/servers-packs.nix
+          ./mod/academic-packs.nix
 
           #home manager
           home-manager.nixosModules.home-manager

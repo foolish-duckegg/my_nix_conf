@@ -24,4 +24,6 @@
   # enable unfree solf ware
   nixpkgs.config.allowUnfree = true;
 
+  programs.nix-ld.enable = env_settings.nix_ld;
+
 }
