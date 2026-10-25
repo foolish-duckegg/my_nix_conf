@@ -68,6 +68,8 @@
   programs.xfconf.enable = true; # Xfce 配置存储服务
   environment.systemPackages = with pkgs; [
     file-roller # 配合 thunar-archive-plugin 使用的解压后端
+    kdePackages.qtimageformats
+    kdePackages.kimageformats
   ];
 
 }

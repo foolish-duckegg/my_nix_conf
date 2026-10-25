@@ -13,11 +13,15 @@
 
     # DMS
     dms.url = "github:AvengeMedia/DankMaterialShell";
-    dms.inputs.nixpkgs.follows = "nixpkgs";
+    dms.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    dms.inputs.quickshell.follows = "quickshell";
+
+    #quickshell
+    quickshell.url = "github:quickshell-mirror/quickshell";
 
     dgop = {
       url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     # nix-flatpak
@@ -30,6 +34,7 @@
       nixpkgs,
       home-manager,
       dms,
+      quickshell,
       nixpkgs-unstable,
       ...
     }@inputs:
@@ -86,6 +91,14 @@
               ];
             }
           )
+
+          # quickshell
+          ({ pkgs, ... }: {
+            # quickshell
+            nixpkgs.overlays = [
+              quickshell.overlays.default
+            ];
+          })
         ];
       };
     };

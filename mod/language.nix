@@ -60,9 +60,13 @@
       noto-fonts-cjk-serif
       sarasa-gothic # 等距更纱黑体，非常适合终端
       wqy_zenhei # 文泉驿正黑
+      wqy_microhei # 文泉驿 宋体
+      noto-fonts-cjk-serif # Google Noto 宋体（推荐）
+      corefonts
 
       # neovim的字体
       nerd-fonts.jetbrains-mono
+
     ];
 
     fontconfig.defaultFonts = {

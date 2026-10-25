@@ -11,6 +11,7 @@
   config = lib.mkIf env_settings.academic_packages {
     environment.systemPackages = with pkgs; [
       zotero
+
     ];
 
     # services.flatpak = {

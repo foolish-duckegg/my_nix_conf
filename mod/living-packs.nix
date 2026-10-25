@@ -16,7 +16,7 @@
       # "wechat-2.0"
       wechat
 
-      qq
+      # qq
 
       # 音乐
       spotify
