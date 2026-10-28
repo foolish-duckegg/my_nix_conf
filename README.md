@@ -55,6 +55,11 @@ sudo nix-rebuild switch --flake .$[sys_settings.nix里的host_name]
 reboot
 ```
 
+## 4.5 修复 chrome 看不了视频
+
+!!!不做的话本地mp4都看不了
+打开 chrome， 访问 `chrome://flags/`，ctrl+f 搜索 `Hardware-accelerated video decode`，禁用
+
 ## 5. DMS 桌面配置修改（可选）
 
 此处我记录我使用的配置，可以不按照这里的配置。

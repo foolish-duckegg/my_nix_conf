@@ -28,6 +28,10 @@ spawn-at-startup "xwayland-satellite"
 // 开机启动脚本
 spawn-at-startup "~/startup/user-startup.sh"
 
+// 开启 Wayland 变量
+spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+
 input {
     keyboard {
         xkb {
